@@ -1,4 +1,4 @@
-const { getTranscript } = require('youtube-transcript');
+const { fetchTranscript } = require('youtube-transcript');
 
 module.exports = async function handler(req, res) {
   const { videoUrl } = req.query;
@@ -17,7 +17,7 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ error: 'Invalid YouTube URL' });
     }
 
-    const transcript = await getTranscript(videoId);
+    const transcript = await fetchTranscript(videoId);
     return res.status(200).json({ videoId, transcript });
   } catch (error) {
     console.error(error);
