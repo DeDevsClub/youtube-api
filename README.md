@@ -28,5 +28,4 @@ GET /api/transcript?videoUrl=https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 ## Local Development
 
-npm install
-vercel dev
+`npm install && vercel dev`
