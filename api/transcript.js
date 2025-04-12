@@ -1,6 +1,6 @@
-import { getTranscript } from 'youtube-transcript';
+const { getTranscript } = require('youtube-transcript');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const { videoUrl } = req.query;
 
   if (!videoUrl) {
@@ -23,4 +23,4 @@ export default async function handler(req, res) {
     console.error(error);
     return res.status(500).json({ error: error.message });
   }
-}
+};
